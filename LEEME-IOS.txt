@@ -1,0 +1,59 @@
+MED GOD PARA iPHONE / iPAD  (.ipa para SideStore, AltStore o Sideloadly)
+=========================================================================
+
+Es la misma interfaz de tu app de escritorio (app-src/index.html) dentro de un contenedor nativo de iOS.
+Genera un .ipa SIN FIRMAR: SideStore / AltStore / Sideloadly lo firman con tu Apple ID al instalarlo.
+
+IMPORTANTE: el código Swift NO se pudo compilar ni probar en el entorno donde lo escribió Claude (no hay Xcode).
+Es posible que la primera compilación marque algún error de sintaxis. Si pasa, mándale a Claude el texto del error.
+
+---------------------------------------------------------------
+OPCIÓN A (recomendada, no necesitas Xcode): compilar en GitHub (gratis)
+---------------------------------------------------------------
+1) Crea una cuenta en github.com y un repositorio NUEVO y PRIVADO (ej. "medgod-ios").
+2) Sube TODO el contenido de esta carpeta (incluida la carpeta oculta .github). En la web: "Add file → Upload files".
+   Si no ves .github en tu Mac, pulsa Cmd+Shift+. para mostrar archivos ocultos.
+3) Entra a la pestaña "Actions" → "Compilar MedGod.ipa" → "Run workflow".
+4) Espera ~5-10 min. Al terminar, abre la ejecución y descarga "MedGod-ipa" (zip con MedGod.ipa).
+5) Instálalo con SideStore/AltStore/Sideloadly (elige el archivo .ipa).
+
+---------------------------------------------------------------
+OPCIÓN B: compilar en tu MacBook Air M1
+---------------------------------------------------------------
+Requisitos: Xcode (App Store, ábrelo una vez), Node.js y Homebrew.
+Doble clic en build-ipa.command → al terminar aparece MedGod.ipa en esta carpeta.
+(Si macOS lo bloquea: clic derecho → Abrir.)
+
+---------------------------------------------------------------
+QUÉ FUNCIONA / QUÉ CAMBIA EN iPHONE
+---------------------------------------------------------------
+Funciona (adaptado):
+ - Notas, páginas, videos, destacados, carpetas, calendario, tarjetas, IA con tu API (Claude, DeepSeek, Gemini, ChatGPT…).
+ - Biblioteca: "Subir archivos" abre la app Archivos (ahí puedes elegir de iCloud, Google Drive, Dropbox, OneDrive).
+   Todo se guarda en Archivos → En mi iPhone → Med God (pega ahí archivos y pulsa 🔄 Refrescar).
+ - Páginas web al lado (3 paneles) y subrayado en páginas: se usa un navegador nativo encima del panel.
+ - Sincronización de notas con tu PC/Mac: botón ⋯ (abajo a la izquierda) → "Carpeta de sincronización de notas…"
+   y elige la MISMA carpeta de Drive/Dropbox que usas en la PC. Luego ⋯ → "Sincronizar notas".
+   Usa exactamente la misma lógica de fusión que la versión de escritorio (cada equipo escribe su propio archivo).
+ - Botón ☁ Nube: igual, eliges la carpeta desde Archivos.
+ - Exportar / Descargar PDF: abre la hoja de compartir → "Guardar en Archivos".
+ - Imprimir: usa AirPrint.
+
+NO disponible en iPhone (por diferencias del sistema):
+ - 🔗 Cuentas (OAuth de Google Drive/Dropbox): no hace falta, usa Archivos (ver arriba).
+ - USB y "Actualizar aplicación…" (parches): en iPhone se actualiza instalando un .ipa nuevo.
+ - Subir CARPETAS enteras: iOS no permite elegir carpetas desde el selector de archivos; selecciona varios archivos.
+
+Puede requerir ajustes (es una interfaz hecha para pantalla grande):
+ - En pantallas pequeñas, los 3 paneles se verán apretados; en iPad se ve mejor. Si algo se ve mal, dile a Claude qué pantalla es.
+ - Reordenar arrastrando (drag & drop) depende de que iOS lo permita con el dedo; puede no funcionar en iPhone.
+ - Subrayar en páginas web: se activa al terminar de seleccionar el texto (espera medio segundo).
+ - Visores de PDF muy pesados pueden ir lentos.
+
+---------------------------------------------------------------
+LÍMITES DE SIDELOADING (Apple, no de la app)
+---------------------------------------------------------------
+ - Con un Apple ID gratis, la app se firma por 7 días: SideStore/AltStore la renuevan solos si los dejas configurados.
+ - Máximo 3 apps activas con Apple ID gratis.
+ - Tus notas y archivos viven en Documentos/Med God; reinstalar sobre la misma app los conserva (si borras la app, se pierden:
+   por eso conviene dejar la sincronización de notas activa).

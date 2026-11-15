@@ -1,0 +1,13 @@
+{
+  "name": "med-god-ios-libs",
+  "version": "1.1.0",
+  "private": true,
+  "dependencies": {
+    "pdfjs-dist": "3.11.174",
+    "jszip": "3.10.1",
+    "epubjs": "0.3.93",
+    "jspdf": "2.5.1",
+    "mammoth": "1.6.0",
+    "xlsx": "0.18.5"
+  }
+}
